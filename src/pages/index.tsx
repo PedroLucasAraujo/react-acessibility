@@ -2,8 +2,14 @@ import Image from "next/image";
 import LogoImg from "../assets/logo.svg";
 import styles from "../styles/home.module.css";
 import Head from "next/head";
+import { useState } from "react";
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  function handleModalOpen() {
+    return setIsModalOpen(true);
+  }
   return (
     <>
       <Head>
@@ -69,9 +75,18 @@ export default function Home() {
         <Image src={LogoImg} width={286 / 2} alt="Blog da RocketSeat" />
 
         <nav className={styles.nav} aria-label="Rodapé">
-          <a href="#termos-de-uso">Termos de Uso</a>
+          <button onClick={handleModalOpen} type="button">
+            Termos de Uso
+          </button>
         </nav>
       </footer>
+
+      {isModalOpen && (
+        <div className={styles.modal}>
+          <h2>Termos de Uso</h2>
+          <p>Esses são os termos de uso:</p>
+        </div>
+      )}
     </>
   );
 }
