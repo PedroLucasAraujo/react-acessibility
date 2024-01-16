@@ -3,11 +3,11 @@ import LogoImg from "../assets/logo.svg";
 import styles from "../styles/home.module.css";
 export default function Home() {
   return (
-    <div>
-      <div className={styles.header}>
+    <>
+      <header className={styles.header}>
         <Image src={LogoImg} width={286 / 2} />
 
-        <div className={styles.nav}>
+        <nav className={styles.nav}>
           <a href="https://github.com/PedroLucasAraujo">
             <svg
               stroke="currentColor"
@@ -24,36 +24,48 @@ export default function Home() {
               />
             </svg>
           </a>
-        </div>
-      </div>
+        </nav>
+      </header>
 
-      <div className={styles.content}>
-        <h2>Developing an accessible web!</h2>
-        <h4>
-          Protocols and guidelines guide the development of technologies
-          accessible, but we need to look beyond all this
-        </h4>
+      <main>
+        <article className={styles.content}>
+          <header>
+            <h2>Developing an accessible web!</h2>
+            <h4>
+              Protocols and guidelines guide the development of technologies
+              accessible, but we need to look beyond all this
+            </h4>
+          </header>
 
-        <p>
-          Accessibility has become a trend in the technological ecosystem
-          worldwide, several companies began to adopt criteria for accessible
-          development in your projects -- as a practical matter or due to legal
-          requirements --, however, there is still a lack of resources and
-          awareness of what is actually inclusive on the internet for people
-          with deficiencies.
-        </p>
+          <p>
+            Accessibility has become a trend in the technological ecosystem
+            worldwide, several companies began to adopt criteria for accessible
+            development in your projects -- as a practical matter or due to
+            legal requirements --, however, there is still a lack of resources
+            and awareness of what is actually inclusive on the internet for
+            people with deficiencies.
+          </p>
 
-        <p>
-          To address this topic, it is necessary to have a cultural perspective
-          on the subject, do not view it only from a technical or practical
-          perspective. Accessibility came to be seen as a challenge (or trend)
-          for the ecosystem tech, and not as a natural philosophy of what
-          matches the web basics: accessible to humans. Such a statement is at
-          W3C.
-        </p>
+          <p>
+            To address this topic, it is necessary to have a cultural
+            perspective on the subject, do not view it only from a technical or
+            practical perspective. Accessibility came to be seen as a challenge
+            (or trend) for the ecosystem tech, and not as a natural philosophy
+            of what matches the web basics: accessible to humans. Such a
+            statement is at W3C.
+          </p>
 
-        <h3>What is accessibility, anyway?</h3>
-      </div>
-    </div>
+          <h3>What is accessibility, anyway?</h3>
+        </article>
+      </main>
+
+      <footer className={styles.header}>
+        <Image src={LogoImg} width={286 / 2} />
+
+        <nav className={styles.nav} aria-label="Rodapé">
+          <a href="#termos-de-uso">Termos de Uso</a>
+        </nav>
+      </footer>
+    </>
   );
 }
