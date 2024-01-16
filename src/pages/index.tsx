@@ -5,10 +5,10 @@ export default function Home() {
   return (
     <>
       <header className={styles.header}>
-        <Image src={LogoImg} width={286 / 2} />
+        <Image src={LogoImg} width={286 / 2} alt="Blog da Rocketseat" />
 
         <nav className={styles.nav}>
-          <a href="https://github.com/PedroLucasAraujo">
+          <a href="https://github.com/PedroLucasAraujo" aria-label="GitHub">
             <svg
               stroke="currentColor"
               fill="currentColor"
@@ -60,7 +60,7 @@ export default function Home() {
       </main>
 
       <footer className={styles.header}>
-        <Image src={LogoImg} width={286 / 2} />
+        <Image src={LogoImg} width={286 / 2} alt="Blog da RocketSeat" />
 
         <nav className={styles.nav} aria-label="Rodapé">
           <a href="#termos-de-uso">Termos de Uso</a>
