@@ -1,9 +1,15 @@
 import Image from "next/image";
 import LogoImg from "../assets/logo.svg";
 import styles from "../styles/home.module.css";
+import Head from "next/head";
+
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Developing an accessible web | RocketSeat Blog</title>
+      </Head>
+
       <header className={styles.header}>
         <Image src={LogoImg} width={286 / 2} alt="Blog da Rocketseat" />
 
@@ -30,11 +36,11 @@ export default function Home() {
       <main>
         <article className={styles.content}>
           <header>
-            <h2>Developing an accessible web!</h2>
-            <h4>
+            <h1>Developing an accessible web!</h1>
+            <h2>
               Protocols and guidelines guide the development of technologies
               accessible, but we need to look beyond all this
-            </h4>
+            </h2>
           </header>
 
           <p>
