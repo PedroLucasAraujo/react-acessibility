@@ -2,6 +2,14 @@
 # yarn lockfile v1
 
 
+"@axe-core/react@^4.8.3":
+  version "4.8.3"
+  resolved "https://registry.yarnpkg.com/@axe-core/react/-/react-4.8.3.tgz#a5a8e0f79a805884e9b4711ef23d94858bad93ac"
+  integrity sha512-rHAg0HIDrwfSkYZelu8iUV9Cdafib0mnoDwqqdkXsULvmCDfjdeV2dlpyxkOjbKQ+6TPy05JUF+VMWe7wXa/zQ==
+  dependencies:
+    axe-core "~4.8.3"
+    requestidlecallback "^0.3.0"
+
 "@next/env@14.0.4":
   version "14.0.4"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-14.0.4.tgz#d5cda0c4a862d70ae760e58c0cd96a8899a2e49a"
@@ -91,6 +99,11 @@
   version "0.16.8"
   resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.8.tgz#ce5ace04cfeabe7ef87c0091e50752e36707deff"
   integrity sha512-WZLiwShhwLRmeV6zH+GkbOFT6Z6VklCItrDioxUnv+u4Ll+8vKeFySoFyK/0ctcRpOmwAicELfmys1sDc/Rw+A==
+
+axe-core@~4.8.3:
+  version "4.8.3"
+  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.8.3.tgz#205df863dd9917d5979e9435dab4d47692759051"
+  integrity sha512-d5ZQHPSPkF9Tw+yfyDcRoUOc4g/8UloJJe5J8m4L5+c7AtDdjDLRxew/knnI4CxvtdxEUVgWz4x3OIQUIFiMfw==
 
 busboy@1.6.0:
   version "1.6.0"
@@ -193,6 +206,11 @@ react@^18:
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
   dependencies:
     loose-envify "^1.1.0"
+
+requestidlecallback@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/requestidlecallback/-/requestidlecallback-0.3.0.tgz#6fb74e0733f90df3faa4838f9f6a2a5f9b742ac5"
+  integrity sha512-TWHFkT7S9p7IxLC5A1hYmAYQx2Eb9w1skrXmQ+dS1URyvR8tenMLl4lHbqEOUnpEYxNKpkVMXUgknVpBZWXXfQ==
 
 scheduler@^0.23.0:
   version "0.23.0"
