@@ -2,14 +2,22 @@ import Image from "next/image";
 import LogoImg from "../assets/logo.svg";
 import styles from "../styles/home.module.css";
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const modalRef = useRef();
 
   function handleModalOpen() {
     return setIsModalOpen(true);
   }
+
+  useEffect(() => {
+    if (isModalOpen) {
+      modalRef?.current?.focus();
+    }
+  }, [isModalOpen]);
+
   return (
     <>
       <Head>
@@ -75,16 +83,24 @@ export default function Home() {
         <Image src={LogoImg} width={286 / 2} alt="Blog da RocketSeat" />
 
         <nav className={styles.nav} aria-label="Rodapé">
-          <button onClick={handleModalOpen} type="button">
+          <button onClick={handleModalOpen} type="button" aria-controls="modal">
             Termos de Uso
           </button>
         </nav>
       </footer>
 
       {isModalOpen && (
-        <div className={styles.modal}>
-          <h2>Termos de Uso</h2>
-          <p>Esses são os termos de uso:</p>
+        <div
+          id="modal"
+          ref={modalRef}
+          className={styles.modal}
+          aria-labelledby="modalTitle"
+          aria-describedby="modalSubTitle"
+          role="dialog"
+          tab-tabIndex={-1}
+        >
+          <h2 id="modalTitle">Termos de Uso</h2>
+          <p id="modalSubTitle">Esses são os termos de uso:</p>
         </div>
       )}
     </>
