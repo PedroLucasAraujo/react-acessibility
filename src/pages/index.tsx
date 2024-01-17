@@ -2,21 +2,15 @@ import Image from "next/image";
 import LogoImg from "../assets/logo.svg";
 import styles from "../styles/home.module.css";
 import Head from "next/head";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
+import * as Dialog from "@radix-ui/react-dialog";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const modalRef = useRef();
 
   function handleModalOpen() {
     return setIsModalOpen(true);
   }
-
-  useEffect(() => {
-    if (isModalOpen) {
-      modalRef?.current?.focus();
-    }
-  }, [isModalOpen]);
 
   return (
     <>
@@ -83,26 +77,25 @@ export default function Home() {
         <Image src={LogoImg} width={286 / 2} alt="Blog da RocketSeat" />
 
         <nav className={styles.nav} aria-label="Rodapé">
-          <button onClick={handleModalOpen} type="button" aria-controls="modal">
-            Termos de Uso
-          </button>
+          <Dialog.Root>
+            <Dialog.Trigger asChild>
+              <button type="button">Termos de Uso</button>
+            </Dialog.Trigger>
+            <Dialog.Portal>
+              <Dialog.Overlay className={styles.overlay} />
+              <Dialog.Content className={styles.modal}>
+                <Dialog.Title>Termos de Uso</Dialog.Title>
+                <Dialog.Description>
+                  Esses são os termos de uso:
+                </Dialog.Description>
+                <Dialog.Close asChild>
+                  <button className={styles.closeModalButton}>Fechar</button>
+                </Dialog.Close>
+              </Dialog.Content>
+            </Dialog.Portal>
+          </Dialog.Root>
         </nav>
       </footer>
-
-      {isModalOpen && (
-        <div
-          id="modal"
-          ref={modalRef}
-          className={styles.modal}
-          aria-labelledby="modalTitle"
-          aria-describedby="modalSubTitle"
-          role="dialog"
-          tab-tabIndex={-1}
-        >
-          <h2 id="modalTitle">Termos de Uso</h2>
-          <p id="modalSubTitle">Esses são os termos de uso:</p>
-        </div>
-      )}
     </>
   );
 }
